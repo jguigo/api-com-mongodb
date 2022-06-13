@@ -1,17 +1,10 @@
 import express from "express";
+import { routes } from "./routes/index.js";
 
 const app = express();
 
-const livros = [
-   { id: 1, titulo: "O senhor dos Aneis" },
-   { id: 2, titulo: "O Hobbit" },
-];
+app.use(express.json());
 
-app.get("/", (req, res) => {
-   res.status(200).send("curso de node com mongodb");
-});
-app.get("/livros", (req, res) => {
-   res.status(200).json(livros);
-});
+app.use(routes);
 
 export default app;
