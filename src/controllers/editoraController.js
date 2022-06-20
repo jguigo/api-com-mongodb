@@ -38,7 +38,9 @@ class EditoraController {
 
       editoras.findByIdAndUpdate(id, { $set: req.body }, (err) => {
          if (!err) {
-            res.status(200).send({ message: "editoras atualizado com sucesso!" });
+            res.status(200).send({
+               message: "editoras atualizado com sucesso!",
+            });
          } else {
             res.status(500).send({ message: err.message });
          }
