@@ -1,6 +1,7 @@
 import express from "express";
 import livros from "./livrosRoutes.js";
 import autores from "./autoresRoutes.js";
+import editoras from "./editoraRoutes.js";
 
 const routes = express.Router();
 
@@ -10,5 +11,7 @@ routes.get("/", (req, res) => {
 
 routes.use(livros);
 routes.use(autores);
+routes.use(editoras);
+
 
 export default routes;
